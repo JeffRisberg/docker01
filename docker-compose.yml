@@ -1,7 +1,7 @@
 version: '2'
 services:
   docker01:
-    image: '853301516381.dkr.ecr.us-west-2.amazonaws.com/docker01:${APP_VERSION}'
+    image: '853301516381.dkr.ecr.us-west-2.amazonaws.com/${application_name}:${APP_VERSION}'
     ports:
       - '0:8080'
     environment:
