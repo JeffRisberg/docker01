@@ -1,20 +1,15 @@
-# Reporting Status Service
+# Docker01 example
 
-### To run this project against a test channel
+## Development
 
-Use the command,
+This uses Ratpack to build a microservice.
 
-`PORT=yourPort# SLACK_URL=slackWebhookUrl java -jar reporting-status-service-version.jar`
+## Build
 
+`./run-build dev`
 
-For example,
+This will build the image locally.
 
-`PORT=8000 SLACK_URL=https://hooks.slack.com/services/T02e3310E6/B635634 java -jar build/libs/reporting-status-service-fd2dgdge3.jar`
+## Deploy to docker
 
-
-You can get a webhook url for testing from ops
-
-# Development
-
-* Redis back store uses '|' as a delimiter between message and date.
-    Don't use '|' in messages.
+`./deploy.sh dev apply`
