@@ -3,7 +3,8 @@ services:
   docker01:
     image: '853301516381.dkr.ecr.us-west-2.amazonaws.com/${application_name}:${APP_VERSION}'
     ports:
-      - '0:8080'
+      - '5050:8080'
+      - '50505:50505'
     environment:
       - PORT=8080
       - APPLICATION=${application_name}

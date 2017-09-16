@@ -9,6 +9,13 @@ ENV application ${APP}
 
 COPY target/docker01-jar-with-dependencies.jar /home/docker01-jar-with-dependencies.jar
 
+# port for microservice
 EXPOSE 5050
 
-CMD ["java", "-jar", "/home/docker01-jar-with-dependencies.jar"]
+# remote debugging port for IntelliJ
+EXPOSE 50505
+
+CMD ["java", \
+     "-agentlib:jdwp=transport=dt_socket,address=50505,suspend=n,server=y", \
+     "-jar", \
+     "/home/docker01-jar-with-dependencies.jar"]
