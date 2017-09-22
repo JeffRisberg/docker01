@@ -7,7 +7,7 @@ dependencies, then deploys it to Docker.
 
 ## Build
 
-`./run-build dev`
+`./run-build.sh dev`
 
 This will build the image locally.
 
