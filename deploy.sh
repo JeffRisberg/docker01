@@ -29,11 +29,4 @@ if [[ $environment == 'dev' ]]; then
         docker-compose -f docker-compose.yml -f dev.yml down
     fi
 
-else
-    # Sets up ecs-cli to communicate with this cluster
-    ecs-cli configure --region "us-east-1" -cluster $ECS_CLUSTER --compose-service-name-prefix "" --compose-project-name-prefix "" || { echo "Error configuring ecs-cli"; exit; }
-
-    # Get APP_VERSION from deploy descriptor
-    export APP_VERSION=$(curl -s https://artifacts.internal.quanticmind.com/${environment}/deploy_descriptor.json | jq -r ".artifacts.${artifact_name}.version") || { echo "unable to get version from build descriptor"; exit; }
-
-fi # End else
+fi

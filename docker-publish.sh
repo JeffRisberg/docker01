@@ -7,7 +7,6 @@ if [[ $# != 2 ]]; then
   exit 1
 fi
 
-
 BUILD_ENV=$1
 APP_VERSION=$2
 DOCKER_BASE_URL="853301516381.dkr.ecr.us-west-2.amazonaws.com/docker01"
@@ -19,7 +18,8 @@ JAR="target/docker01-jar-with-dependencies.jar"
 echo "Building Docker Image $FULL_ECR_PATH for $APPLICATION."
 docker build -t $FULL_ECR_PATH . --build-arg APP_VERSION=$APP_VERSION --build-arg APP=$APPLICATION --build-arg JAR=$JAR
 
-if [ "${BUILD_ENV}" == "jenkins" ]; then
+#if [ "${BUILD_ENV}" == "jenkins" ]; then
+if [ true ]; then
     echo "Logging into AWS ECR Docker Repository."
     eval "$(aws ecr get-login --profile MainAWS --no-include-email)"
 

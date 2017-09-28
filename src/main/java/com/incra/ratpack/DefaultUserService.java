@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class DefaultUserService implements UserService {
     public List<String> getUsers() {
-        String[] users = {"Charlie Brown", "Snoopy", "John", "Paul", "George", "Ringo"};
+        String[] users = {"John", "Paul", "George", "Ringo"};
 
         return Arrays.asList(users);
     }

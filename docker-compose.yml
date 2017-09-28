@@ -1,12 +1,11 @@
-version: '2'
+version: '3'
 services:
   docker01:
     image: '853301516381.dkr.ecr.us-west-2.amazonaws.com/${application_name}:${APP_VERSION}'
     ports:
-      - '5050:8080'
+      - '0:5050'
       - '50505:50505'
     environment:
-      - PORT=8080
       - APPLICATION=${application_name}
       - VERSION=${APP_VERSION}
       - ENVIRONMENT=${environment}
