@@ -17,9 +17,9 @@ This will build the image locally.
 
 ## Sample run
 
-`curl $(docker-machine ip default):8080`
+`curl localhost:8080`
 
-`curl $(docker-machine ip default):8080/users`
+`curl localhost:8080/users`
 
 ## Connect a debugger to the running process in Docker
 
